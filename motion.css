@@ -62,6 +62,7 @@
 
 .float {
   --icon-tilt: 0deg;
+  transform: none;
   animation:
     hero-pop 650ms cubic-bezier(0.16, 1, 0.3, 1) both,
     icon-float 5s ease-in-out 650ms infinite;
@@ -74,6 +75,7 @@
 
 .person {
   --portrait-tilt: 0deg;
+  transform: none;
   animation:
     hero-pop 650ms cubic-bezier(0.16, 1, 0.3, 1) both,
     portrait-float 6s ease-in-out 700ms infinite;
