@@ -1,0 +1,330 @@
+.header {
+  animation: header-enter 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.brand {
+  animation: fade-in 500ms ease 120ms both;
+}
+
+.links > a {
+  animation: fade-in 420ms ease both;
+}
+
+.links > a:nth-child(1) { animation-delay: 180ms; }
+.links > a:nth-child(2) { animation-delay: 260ms; }
+.links > a:nth-child(3) { animation-delay: 340ms; }
+.links > a:nth-child(4) { animation-delay: 420ms; }
+.links > a:nth-child(5) { animation-delay: 500ms; }
+.links > a:nth-child(6) {
+  animation-name: button-enter;
+  animation-duration: 400ms;
+  animation-delay: 580ms;
+}
+
+.links > a:not(.nav-button) {
+  transition: color 200ms ease;
+}
+
+.nav-button,
+.button {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.nav-button:hover,
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px #19192020;
+}
+
+.button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.hero-copy .eyebrow {
+  animation: fade-up 500ms ease 200ms both;
+}
+
+.hero h1 .heading-line {
+  display: inline-block;
+  animation: fade-up 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero h1 .heading-line:first-child { animation-delay: 300ms; }
+.hero h1 .heading-line:last-child { animation-delay: 450ms; }
+
+.hero-copy p {
+  animation: fade-up 500ms ease 500ms both;
+}
+
+.hero-copy .button {
+  animation: button-enter 450ms cubic-bezier(0.16, 1, 0.3, 1) 650ms both;
+}
+
+.float {
+  --icon-tilt: 0deg;
+  animation:
+    hero-pop 650ms cubic-bezier(0.16, 1, 0.3, 1) both,
+    icon-float 5s ease-in-out 650ms infinite;
+}
+
+.f1 { --icon-tilt: -8deg; animation-delay: 180ms, 650ms; animation-duration: 650ms, 4.5s; }
+.f2 { --icon-tilt: 8deg; animation-delay: 300ms, -1.5s; animation-duration: 650ms, 5.2s; }
+.f3 { --icon-tilt: 8deg; animation-delay: 420ms, -2.5s; animation-duration: 650ms, 4.8s; }
+.f4 { animation-delay: 540ms, -3.2s; animation-duration: 650ms, 5.5s; }
+
+.person {
+  --portrait-tilt: 0deg;
+  animation:
+    hero-pop 650ms cubic-bezier(0.16, 1, 0.3, 1) both,
+    portrait-float 6s ease-in-out 700ms infinite;
+}
+
+.p1 { --portrait-tilt: -8deg; animation-delay: 400ms, -2s; }
+.p2 { --portrait-tilt: 8deg; animation-delay: 520ms, -4s; }
+.p3 { --portrait-tilt: 7deg; animation-delay: 640ms, -1s; }
+
+.float:hover,
+.person:hover {
+  animation-play-state: paused;
+}
+
+.hero-note {
+  animation: fade-up 550ms ease 800ms both;
+}
+
+.hero-bottom {
+  animation: fade-in 600ms ease 900ms both;
+}
+
+.side-photo {
+  transition: scale 250ms ease, box-shadow 250ms ease;
+}
+
+.side-photo:hover {
+  scale: 1.04;
+  box-shadow: 0 20px 36px #19192020;
+}
+
+.features .feature-card {
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.features .feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #d9ccff;
+  box-shadow: 0 14px 28px #19192012;
+}
+
+.feature-card .visual > svg,
+.feature-card .visual i[data-lucide] {
+  transition: scale 250ms ease;
+}
+
+.feature-card:hover .visual i[data-lucide] {
+  scale: 1.06;
+}
+
+.js-motion .bars i {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-motion .feature-card.is-visible .bars i {
+  transform: scaleY(1);
+}
+
+.bars i:nth-child(2) { transition-delay: 70ms; }
+.bars i:nth-child(3) { transition-delay: 140ms; }
+.bars i:nth-child(4) { transition-delay: 210ms; }
+.bars i:nth-child(5) { transition-delay: 280ms; }
+
+.document {
+  transition: scale 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card.is-visible .document {
+  scale: 1.04;
+}
+
+.js-motion .employee-list span {
+  opacity: 0;
+  translate: 0 5px;
+  transition: opacity 350ms ease, translate 350ms ease;
+}
+
+.js-motion .feature-card.is-visible .employee-list span {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.js-motion .employee-list span:nth-child(2) { transition-delay: 100ms; }
+.js-motion .employee-list span:nth-child(3) { transition-delay: 200ms; }
+
+.team-visual .dot {
+  transition: scale 350ms ease;
+}
+
+.feature-card.is-visible .team-visual .dot {
+  animation: node-pop 500ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.team-visual .dot:nth-of-type(2) { animation-delay: 70ms; }
+.team-visual .dot:nth-of-type(3) { animation-delay: 140ms; }
+.team-visual .dot:nth-of-type(4) { animation-delay: 210ms; }
+.team-visual .dot:nth-of-type(5) { animation-delay: 280ms; }
+.team-visual .dot:nth-of-type(6) { animation-delay: 350ms; }
+
+.integration-box {
+  transition: box-shadow 250ms ease;
+}
+
+.integration-logos > div {
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    background-color 250ms ease;
+}
+
+.integration-logos > div:hover {
+  transform: translateY(-5px) rotate(0deg);
+  box-shadow: 0 10px 22px #19192014;
+}
+
+.quote-card {
+  transition: opacity 180ms ease, translate 180ms ease, scale 700ms ease;
+}
+
+.quote-card.is-switching {
+  opacity: 0;
+  translate: 0 8px;
+}
+
+.contact input,
+.contact textarea {
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px #9662f526;
+  outline: 0;
+}
+
+.socials a {
+  transition: color 200ms ease, background-color 200ms ease, transform 200ms ease;
+}
+
+.socials a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-links a {
+  transition: color 200ms ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.js-motion [data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 650ms ease var(--reveal-delay, 0ms),
+    translate 650ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    scale 650ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+}
+
+.js-motion [data-reveal="up"] { translate: 0 22px; }
+.js-motion [data-reveal="down"] { translate: 0 -14px; }
+.js-motion [data-reveal="left"] { translate: -25px 0; }
+.js-motion [data-reveal="right"] { translate: 25px 0; }
+.js-motion [data-reveal="scale"] { scale: 0.97; }
+
+.js-motion [data-reveal].is-visible {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.js-motion .features .feature-card {
+  transition:
+    opacity 650ms ease var(--reveal-delay, 0ms),
+    translate 650ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    scale 650ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.card-grid .feature-card:nth-child(1) { --reveal-delay: 0ms; }
+.card-grid .feature-card:nth-child(2) { --reveal-delay: 100ms; }
+.card-grid .feature-card:nth-child(3) { --reveal-delay: 200ms; }
+.card-grid .feature-card:nth-child(4) { --reveal-delay: 300ms; }
+.card-grid .feature-card:nth-child(5) { --reveal-delay: 400ms; }
+.card-grid .feature-card:nth-child(6) { --reveal-delay: 500ms; }
+
+.integration-logos > div:nth-child(1) { --reveal-delay: 0ms; }
+.integration-logos > div:nth-child(2) { --reveal-delay: 100ms; }
+.integration-logos > div:nth-child(3) { --reveal-delay: 200ms; }
+.integration-logos > div:nth-child(4) { --reveal-delay: 300ms; }
+.integration-logos > div:nth-child(5) { --reveal-delay: 400ms; }
+
+.js-motion .integration-logos > div:nth-child(odd) { rotate: -3deg; }
+.js-motion .integration-logos > div:nth-child(even) { rotate: 3deg; }
+
+@keyframes header-enter {
+  from { opacity: 0; translate: 0 -12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes button-enter {
+  from { opacity: 0; scale: 0.96; translate: 0 10px; }
+  to { opacity: 1; scale: 1; translate: 0 0; }
+}
+
+@keyframes hero-pop {
+  from { opacity: 0; scale: 0.92; }
+  to { opacity: 1; scale: 1; }
+}
+
+@keyframes icon-float {
+  0%, 100% { translate: 0 0; rotate: var(--icon-tilt); }
+  50% { translate: 0 -7px; rotate: calc(var(--icon-tilt) + 2deg); }
+}
+
+@keyframes portrait-float {
+  0%, 100% { translate: 0 0; rotate: var(--portrait-tilt); }
+  50% { translate: 0 -5px; rotate: calc(var(--portrait-tilt) + 1deg); }
+}
+
+@keyframes node-pop {
+  from { scale: 0.5; }
+  to { scale: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

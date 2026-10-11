@@ -23,10 +23,35 @@ function showQuote() {
  document.querySelector('#quoteRole').textContent = q.role;
  document.querySelector('#quoteText').textContent = q.text;
 }
-document.querySelector('#prev').addEventListener('click', () => { current=(current-1+testimonials.length)%testimonials.length; showQuote(); });
-document.querySelector('#next').addEventListener('click', () => { current=(current+1)%testimonials.length; showQuote(); });
+const quoteCard = document.querySelector('.quote-card');
+let quoteTransition;
+function changeQuote(direction) {
+ current=(current+direction+testimonials.length)%testimonials.length;
+ quoteCard.classList.add('is-switching');
+ window.clearTimeout(quoteTransition);
+ quoteTransition=window.setTimeout(() => {
+  showQuote();
+  requestAnimationFrame(() => quoteCard.classList.remove('is-switching'));
+ }, 170);
+}
+document.querySelector('#prev').addEventListener('click', () => changeQuote(-1));
+document.querySelector('#next').addEventListener('click', () => changeQuote(1));
 document.querySelector('#contactForm').addEventListener('submit', e => {
  e.preventDefault();
  document.querySelector('#formMessage').textContent = 'Thanks! This demo form is working locally. Connect a form service to receive submissions.';
 });
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if ('IntersectionObserver' in window && !prefersReducedMotion) {
+ document.documentElement.classList.add('js-motion');
+ const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+   if (entry.isIntersecting) {
+    entry.target.classList.add('is-visible');
+    revealObserver.unobserve(entry.target);
+   }
+  });
+ }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+ document.querySelectorAll('[data-reveal]').forEach(element => revealObserver.observe(element));
+}

@@ -10,6 +10,7 @@ A responsive HR SaaS landing page based on your reference screenshot. Built with
 ## Customize
 - Change the brand and page text in `index.html`.
 - Colors, layout and responsive breakpoints are in `style.css`.
+- Section reveals, staggered cards, floating hero decorations and reduced-motion support are in `motion.css`.
 - Menu, testimonial slider and demo form behavior are in `script.js`.
 
 ## Notes
